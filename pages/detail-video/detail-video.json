@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "relateVideo":"../../components/relate-video/relate-video",
+    "van-loading": "@vant/weapp/loading/index"
+  }
+}

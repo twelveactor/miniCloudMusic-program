@@ -1,0 +1,8 @@
+<!--pages/detail-search/detail-search.wxml-->
+<van-search value="{{searchValue}}" 
+            shape="round" 
+            placeholder="请输入搜索关键词" 
+            clearable
+            class="search"
+            bind:change='onInputChange'
+/>

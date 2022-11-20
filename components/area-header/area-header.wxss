@@ -1,0 +1,21 @@
+/* components/area-header/area-header.wxss */
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 26rpx;
+}
+
+.header .header-title{
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.header .more{
+  font-size: 24rpx;
+}
+.header .more:hover{
+ color: red;
+}

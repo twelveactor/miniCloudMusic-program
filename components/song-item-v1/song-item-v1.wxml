@@ -1,0 +1,17 @@
+<!--components/song-item-v1/song-item-v1.wxml-->
+<view class="song-item" bindtap="onGotoMusicPlay" >
+  <view class="info">
+    <image src="{{songItem.al.picUrl || songItem.coverImgUrl}}" mode="heightFix" class="song-item-img"/>
+    <view class="info-title">
+      <view class="name">
+      {{songItem.name}}
+    </view>
+    <view class="singer">
+      {{songItem.ar[0].name}}
+    </view>
+    </view>
+  </view>
+  <view class="arrow">
+    <van-icon name="arrow" class="arrow-icon"/>
+  </view>
+</view>

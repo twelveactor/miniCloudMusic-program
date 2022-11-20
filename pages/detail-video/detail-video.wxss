@@ -1,0 +1,44 @@
+/* pages/detail-video/detail-video.wxss */
+.video-play{
+  width: 100%;
+}
+.content{
+  /* scroll-view 必须要的两个条件，必须设置一个高度，和设置 scroll-y="true" */
+  /* <scroll-view class="content" scroll-y> */
+  height: calc(100vh - 225px);
+}
+.video-content{
+  padding: 10px;
+  font-size: 26rpx;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.video-content .content-title{
+  font-weight: bold;
+  line-height: 50rpx;
+}
+.video-content .content-desc{
+  margin-top: 10px;
+  line-height: 50rpx;
+  color: rgb(99, 99, 99);
+}
+.cut-off{
+  text-align: center;
+  font-size: 26rpx;
+  margin: 10rpx 0 10rpx 0;
+}
+.hr{
+  background: #E0E3DA;
+  width: 100%;
+  height: 5rpx;
+  margin: 10rpx 0 20rpx 0;
+}
+.relate-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  font-size: 24rpx;
+}
+
+.relate-list .relate-items{
+  width: 48%;
+}

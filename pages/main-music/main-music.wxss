@@ -1,0 +1,34 @@
+/* pages/main-music/main-music.wxss */
+page{
+  /* 修改 search 的样式 */
+  --search-background-color:#fafafa;
+  --search-padding:10px 0;
+
+  box-sizing: border-box;
+  padding: 0 24rpx;
+}
+
+.swiper{
+  border-radius: 14rpx;
+  overflow: hidden;
+}
+.swiper-item-img{
+  width: 100%;
+  /* height: 100%; */
+}
+
+/* .hot-menu{
+  width: 100vw;
+  height: 100%;
+} */
+.hot-menu .hot-menu-item{
+  width: 100vw;
+  height: 260rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  /* overflow: hidden; */
+  overflow-x: auto;
+
+  margin-left: -24rpx;
+}

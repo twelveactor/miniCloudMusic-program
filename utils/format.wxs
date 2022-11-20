@@ -1,0 +1,25 @@
+function formatCount(params) {
+  if (params >= 100000000) {
+    return (params / 100000000).toFixed(2) + '亿'
+  }else if (params >= 10000) {
+    return (params / 10000).toFixed(2) + '万'
+  }else{
+    return params + '个'
+  }
+}
+
+// 填充对齐
+function padLef(time) {
+  var time = time + ''
+  return ('00' + time).slice(time.length)
+}
+function formatTimes(time){
+  var minute = Math.floor(time / 1000 / 60)
+  var second = Math.floor(time / 1000 % 60)
+  return padLef(minute) + ':' + padLef(second)
+}
+
+module.exports = {
+  formatCount:formatCount,
+  formatTimes:formatTimes
+}

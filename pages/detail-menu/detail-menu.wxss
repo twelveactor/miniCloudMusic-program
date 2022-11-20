@@ -1,0 +1,10 @@
+/* pages/detail-menu/detail-menu.wxss */
+.all-menu{
+  padding: 0 24rpx;
+}
+
+.menu-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

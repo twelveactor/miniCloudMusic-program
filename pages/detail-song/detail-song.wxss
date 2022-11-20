@@ -1,0 +1,135 @@
+/* pages/detail-song/detail-song.wxss */
+.detai-song{
+  height: 100vh;
+  /* width: 100%; */
+  padding: 5rpx 10rpx;
+
+  height: 100vh;
+}
+.songs-cover {
+  width: 100%; 
+  height: 450rpx;
+  /* overflow: hidden; */
+  margin-bottom: 10rpx;
+
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.songs-cover .bg-cover{
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: .6;
+}
+.songs-cover .coverimg {
+  display: block;
+  height: 450rpx !important;
+  width: 100%;
+  /* overflow: hidden; */
+  /* height: 450rpx; */
+  /* border-radius: 12rpx; */
+}
+
+.album {
+  display: flex;
+  margin-top: 60rpx;
+  padding: 0 50rpx;
+  color: white;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.album .image {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 16rpx;
+}
+
+.album .info {
+  position: relative;
+  height: 220rpx;
+  flex: 1;
+  margin-left: 50rpx;
+}
+
+.album .anthor {
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.album .anthor .avatar {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+}
+
+.album .anthor .nickname {
+  font-size: 24rpx;
+  margin-left: 18rpx;
+}
+
+.album .info .desc {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 30rpx;
+  font-size: 24rpx;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.songs-title{
+  font-size: 35rpx;
+  font-weight: bolder;
+  padding: 0 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.operation {
+  display: flex;
+  justify-content: space-around;
+  padding: 30rpx;
+  margin-top: 30rpx;
+  color: rgb(255, 255, 255);
+}
+
+.operation .item {
+  display: flex;
+  align-items: center;
+}
+
+.operation .item .icon {
+  width: 48rpx;
+  margin-right: 10rpx;
+}
+
+.operation .item .text {
+  font-size: 28rpx;
+}
+
+.favor{
+  position: absolute;
+  top: 350rpx;
+  left: 150rpx;
+  background-color: rgb(105, 105, 105);
+  border-radius: 18rpx;
+  padding: 10rpx;
+}
+.share{
+  position: absolute;
+  top: 350rpx;
+  left: 450rpx;
+  background-color: rgb(105, 105, 105);
+  border-radius: 18rpx;
+  padding: 10rpx;
+}

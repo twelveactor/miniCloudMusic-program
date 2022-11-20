@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "云音乐(视频)",
+  "usingComponents": {
+    "videoItem":"../../components/video-item/video-item"
+  },
+  "onReachBottomDistance": 20,
+  "enablePullDownRefresh": true
+}

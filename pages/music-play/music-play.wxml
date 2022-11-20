@@ -1,0 +1,92 @@
+<!--pages/music-play/music-play.wxml-->
+<wxs src="../../utils/format.wxs" module="fmt"/>
+<!-- 背景展示 -->
+<image wx:if="{{currentSong}}" src="{{currentSong.al.picUrl}}" mode="aspectFill" class="bg-img" lazy-load/>
+<view class="bg-cover"></view>
+
+<!-- 自定义导航栏 -->
+<van-nav-bar
+  left-arrow
+  bind:click-left="onCallback">
+  <view slot="title" class="custom-title">
+    <view class="title-left {{currentActive === 0 ? 'active':''}}" bindtap="onTitleLeft">歌曲</view>
+    <view class="title-center">|</view>
+    <view class="title-right {{currentActive === 1 ? 'active':''}}" bindtap="onTitleRight">歌词</view>
+  </view>
+</van-nav-bar>
+
+
+<!-- 歌词内容 -->
+<swiper class="swiper" circular bindchange="onCurrentSwiperChange" current="{{currentActive}}" style="height: {{contentHeight}}px;">
+  <swiper-item class="song-item">
+    <view class="album">
+      <image src="{{currentSong.al.picUrl}}" mode="widthFix" class="album-img"/>
+    </view>
+    <view class="singer">
+      <view style="font-size: 50rpx; text-overflow: ellipsis; overflow: hidden;white-space: nowrap;">{{currentSong.name}}</view>
+      <view style="font-size: 25rpx;color: rgb(236, 236, 236);">{{currentSong.ar[0].name}}</view>
+    </view>
+    <view class="lyric">
+      {{currentLyric}}
+    </view>
+    <view class="proress">
+      <slider bindchange="onSliderChange" bindchanging="onSliderChanging" block-size class="slider" value="{{sliderValue}}"/>
+      <view class="time">
+        <view class="current-time">
+          {{fmt.formatTimes(songPlayTime) || '00:00'}}
+        </view>
+        <view class="duration">
+          {{fmt.formatTimes(songDuration) || '00:00'}} 
+        </view>
+      </view>
+    </view>
+    <view class="controls">
+      <image src="../../assets/images/player/play_{{songPlayState[songPlayStateIndex]}}.png" 
+             mode="widthFix" class="paly-order play-controls" 
+             bindtap="onPlayMusic"
+             data-type="stateChange"/>
+      <image src="../../assets/images/player/play_prev.png" 
+             mode="widthFix" 
+             class="paly-next play-controls" 
+             bindtap="onPlayMusic" 
+             data-type="prev"/>
+
+      <image wx:if="{{!controlPlayOrPause}}" 
+             src="../../assets/images/player/play_resume.png" 
+             mode="widthFix" 
+             class="paly-resume play-controls" 
+             bindtap="onPlayMusic" 
+             data-type="resume"/>
+      <image wx:else="{{controlPlayOrPause}}"
+             src="../../assets/images/music/pause_icon.png" 
+             mode="widthFix" class="paly-resume play-controls" 
+             bindtap="onPlayMusic" 
+             data-type="pause"/>
+
+
+      <image src="../../assets/images/player/play_next.png" 
+             mode="widthFix" 
+             class="paly-next play-controls" 
+             bindtap="onPlayMusic" 
+             data-type="next"/>
+      <image src="../../assets/images/player/{{lyricPlayList.length !== 0 ? 'playlist_icon':'play_music'}}.png" 
+             mode="widthFix" 
+             class="paly-order play-controls" 
+             bindtap="onPlayMusic" 
+             data-type="list"/>
+    </view>
+  </swiper-item>
+
+  <swiper-item class="lyric-item">
+    <!-- 歌词 -->
+    <scroll-view scroll-y class="lyric-list" scroll-top="{{lyricScrollTop}}" 	scroll-with-animation enable-passive>
+      <block wx:for="{{lyricInfos}}" wx:key="time">
+        <view class="lyric-line {{currentLyricIndex === index ? 'lyric-active':''}}" 
+              style="padding-top: {{index === 0 ? (contentHeight / 2 - 80) : 0}}px; padding-bottom: {{index === lyricInfos.length - 1 ? (contentHeight / 2) : 0}}px;">
+          {{item.text}}
+        </view>
+      </block>
+    </scroll-view>
+  </swiper-item>
+
+</swiper>

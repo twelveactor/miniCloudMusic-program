@@ -1,0 +1,11 @@
+<!--components/song-item-v2/song-item-v2.wxml-->
+<wxs src="../../utils/format.wxs" module="fmt"/>
+<view class="song-item" bindtap="onMenuItemTop">
+  <image src="{{songItem.coverImgUrl}}" mode="widthFix" class="song-item-img" lazy-load/>
+  <view class="song-item-name">
+      <text class="name">{{songItem.name}}</text>
+  </view>
+  <view class="playCount">
+    <text class="count">{{fmt.formatCount(songItem.playCount)}}</text>
+  </view>
+</view>

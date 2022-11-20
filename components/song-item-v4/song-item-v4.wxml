@@ -1,0 +1,13 @@
+<!--components/song-item-v4/song-item-v4.wxml-->
+<view class="item" bindtap="onGotoMusicPlay">
+  <view class="item-index">
+    {{index}}
+  </view>
+  <view class="item-info">
+    <view class="info-name">{{songItem.name}}</view>
+    <view class="info-singer">
+      <image src="/assets/images/icons/sq_icon.png" mode="widthFix" class="sq" lazy-load/>
+      <text class="singer">{{songItem.ar[0].name}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+/* pages/main-video/main-video.wxss */
+.video-list{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 12rpx;
+}
+
+.video-list .video-items{
+  width: 48%;
+  /* margin: 10px 0 10px 0; */
+}

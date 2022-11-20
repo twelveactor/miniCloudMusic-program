@@ -1,0 +1,33 @@
+<!--pages/detail-video/detail-video.wxml-->
+<!-- <text>detail : {{ id }}</text> -->
+<video src="{{videoUrl}}" controls class="video-play" referrer-policy="origin"/> 
+
+<scroll-view class="content" scroll-y wx:if="{{videoDetails.length}}">
+  <view class="video-content">
+  <view class="content-title">
+    <view>
+      歌曲名称：{{videoDetails.name || '未知'}} 
+    </view>
+    <view>
+      歌手姓名：{{videoDetails.artistName || '未知'}}
+    </view>
+  </view>
+  <view class="content-desc">
+     {{videoDetails.desc || '歌曲介绍:无'}}
+  </view>
+</view>
+<view class="cut-off">
+  <text>相关视频</text>
+  <view class="hr"></view>
+</view>
+<view class="relate-list">
+  <block wx:for="{{ videoRelate }}" wx:key="vid">
+    <!-- <image src="{{item.coverUrl}}" mode="widthFix"/>
+    {{item.title}} -->
+    <relateVideo relateItem="{{item}}" class="relate-items" bindtap="onvideoClick"/>
+  </block>
+</view>
+</scroll-view>
+<view wx:else> 
+  <van-loading color="#1989fa" /> <van-loading type="spinner" color="#1989fa" />
+</view>

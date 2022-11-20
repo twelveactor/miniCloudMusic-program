@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "songItemV4":"../../components/song-item-v4/song-item-v4",
+    "songItemV1":"../../components/song-item-v1/song-item-v1",
+    "van-loading": "@vant/weapp/loading/index"
+  }
+}

@@ -1,0 +1,11 @@
+<!--components/area-header/area-header.wxml-->
+<view class="header">
+  <view class="header-title">
+    <van-icon name="hot-o" color="red" size='30rpx'/>
+    {{title}}
+  </view>
+  <view class="more" bindtap="onMoreClick" wx:if="{{hasMore}}">
+    <text>更多</text>
+    <van-icon name="arrow" />
+  </view>
+</view>

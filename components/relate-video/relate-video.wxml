@@ -1,0 +1,7 @@
+<!--components/relate-video/relate-video.wxml-->
+<view class="relate-item">
+  <image src="{{relateItem.coverUrl}}" mode="widthFix" class="relate-img"/>
+  <view class="relate-info">
+    {{relateItem.title}}
+  </view>
+</view>

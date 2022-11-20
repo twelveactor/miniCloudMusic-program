@@ -1,0 +1,43 @@
+<!--pages/main-music/main-music.wxml-->
+<van-search value="{{searchValue}}" shape="round" placeholder="请输入搜索关键词" clearable class="search" bind:click-input="onFouceSearch" />
+
+<swiper indicator-dots='{{true}}' autoplay circular indicator-color='{{indicatorColor}}' indicator-active-color='{{indicatorActiveColor}}' style="height:{{bannersHeight}}px" class="swiper">
+  <block wx:for="{{banners}}" wx:key="bannerId">
+    <swiper-item class="swiper-item">
+      <image src="{{item.pic}}" mode="widthFix" bindload="onImageLoad" class="swiper-item-img" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="recommend" wx:if="{{recommendSongs.length}}">
+  <areaHeader title='热门榜单' bind:onMoreClick="onHeaderMoreClick"/>
+  <view class="recomend-track">
+    <block wx:for="{{recommendSongs}}" wx:key="id">
+      <songItemV1 songItem="{{item}}" bindtap="onSongItemTap" data-index="{{index}}"/>
+      <!-- <songItemV3 rankingItem="{{item}}" key="{{index}}"/> -->
+    </block>
+  </view>
+</view>
+
+<view class="hot-menu" wx:if="{{hotMenuList.length}}">
+  <areaHeader title='热门歌单' bind:onMoreClick="onHeaderMoreClickToMenu"/>
+  <scroll-view class="hot-menu-item" scroll-x enable-flex style="width:{{hotMenuWidth}}px">
+    <block wx:for="{{hotMenuList}}" wx:key="id">
+      <songItemV2 songItem='{{item}}' />
+    </block>
+  </scroll-view>
+</view>
+
+<view class="ranking" wx:if="{{rankingInfos}}">
+  <areaHeader title='巅峰榜单' hasMore='{{false}}'/>
+  <view class="ranking-list">
+    <!-- 遍历对象， index -> key , item -> value -->
+    <block wx:for="{{rankingInfos}}" wx:key="id">
+      <songItemV3 rankingItem="{{item}}" key="{{index}}"/>
+    </block>
+  </view>
+</view>
+
+<view wx:else>
+  <van-loading color="#1989fa" /> <van-loading type="spinner" color="#1989fa" />
+</view>
